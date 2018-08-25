@@ -1,0 +1,739 @@
+/*RESET*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects
+*/
+img,
+object,
+embed {max-width: 100%;}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:after, .clearfix:before  { content: "\0020"; display: block; height: 0; overflow: hidden; }
+
+/*/RESET*/
+
+/*GENERAL STYLE*/
+
+.wraper{
+	width: 956px;
+	margin: 0 auto;
+}
+button{
+	outline: none;
+}
+body{
+	font-family: 'Scada', sans-serif;
+}
+.fon{
+	background: url(../img/fon.jpg);
+	z-index: -5;
+	position: relative;
+	top:-100px;
+}
+
+/*/GENERAL STYLE*/
+
+/*HEADER*/
+
+header{
+	padding-top: 13px;
+	display: flex;
+	justify-content: space-between;
+	height: 77px;
+}
+.logo{
+	align-self: flex-start;
+	margin-right: 255px;
+}
+.logo img{
+	height: 29px;
+	width: 250px;
+}
+.logo span {
+  font-size: 18.23px;
+  text-align: center;
+  display: inline-block;
+}
+header div:nth-child(2){
+	font-size: 25px;
+	font-weight: 900;
+}
+header div:nth-child(3){
+	display: flex;
+	flex-direction: column;
+	justify-content: center; 
+}
+header div:nth-child(3) button{
+	width: 209px;
+	height: 39px;
+	background: #E3182C;
+	color: #FFFFFF;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+
+/*/HEADER*/
+
+/*MENU*/
+
+nav{
+	height: 48px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: #000000;
+}
+nav ul{
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+nav a{
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+/*/MENU*/
+
+/*APPLICATION*/
+
+.application{
+	height: 762px;
+	background: url(../img/block1.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     background-position: center;
+}
+.application_content h2{
+	width: 795px;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 40px;
+	font-size: 45px;
+	display: block;
+	margin: 0 auto;
+}
+.application_content>div{
+	display: flex;
+	justify-content: center;
+}
+.application_content_list{
+	color: white;
+	font-size: 20px;
+	padding-left: 32px;
+	background-color: rgba(41,36,33,0.8);
+	z-index: 253;
+	width: 267px;
+	height: 235px;
+	-webkit-transform: skew(-190deg);
+	   -moz-transform: skew(-190deg);
+	     -o-transform: skew(-190deg);
+	position: relative;
+	top:98px;
+	right: -15px;
+}
+.application_content_list>div{
+	-webkit-transform: skew(190deg);
+	   -moz-transform: skew(190deg);
+	     -o-transform: skew(190deg);
+
+}
+.application_content_form{
+	color: white;
+	width: 408px;
+	height: 413px;
+	background-color: rgb(227,24,44);
+	-webkit-transform: skew(-190deg);
+	   -moz-transform: skew(-190deg);
+	     -o-transform: skew(-190deg);
+}
+.application_content_form>form{
+	-webkit-transform: skew(190deg);
+	   -moz-transform: skew(190deg);
+	     -o-transform: skew(190deg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.application_content_form>form label{
+    display: block;
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 39px;
+}
+.application_content_form>form span{
+	font-size: 45px;
+	width: 100%;
+}
+.application_content_form>form input{
+	display: block;
+	width:331px;
+	height: 40px;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	padding-left: 12px;
+	margin-bottom: 19px;
+}
+.application_content_list, .application_content_form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.application_content_form input::-webkit-input-placeholder,
+.application_content_form input::-ms-input-placeholder,
+.application_content_form input::-moz-placeholder {
+  color: #606060;
+  font-size: 14px;
+  font-family: 'Scada', sans-serif;
+  opacity: 1;
+}
+.application_content_form>form>p:last-child>input{
+	color: white;
+	text-transform: uppercase;
+	font-size: 18px;
+	background: #878787;
+}
+
+/*/APPLICATION*/
+
+/*OUR PRODUCTS*/
+
+.our_products h2{
+	text-align: center;
+	font-size: 45px;
+	font-weight: bold;
+}
+.our_products>div{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 83px;
+}
+.our_products figcaption{
+	text-align: center;
+	padding-top: 16px;
+	font-size: 25px;
+}
+.our_products{
+	margin-bottom: 84px;
+}
+
+/*/OUR PRODUCTS*/
+
+/*REASONS*/
+
+.reasons{
+	background: url(../img/blok3.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     background-position: center;
+    height: 1015px;
+}
+.reasons h2{
+	text-align: center;
+	padding-top: 148px;
+	font-size: 45px;
+	padding-bottom: 81px;
+}
+.reasons ul{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+.reasons ul div:first-child{
+	border-radius: 50%;
+	background: #000;
+	width: 101px;
+	height: 101px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	float: left;
+	margin-right: 48px;
+}
+.reasons ul{
+	height: 615px;
+}
+.reasons li{
+	width: 44%;
+	height: 141px;
+}
+.reasons ul div:nth-child(2){
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+}
+.reasons ul div:nth-child(2) span:first-child{
+	color: white;
+	padding-top: 2px;
+	font-size: 25px;
+}
+.reasons ul div:nth-child(2) span:last-child{
+	font-size: 18px;
+	position: relative;
+	bottom: 10px;
+}
+
+/*/REASONS*/
+
+/*DREAM*/
+
+.dream{
+	height: 790px;
+	padding-top: 208px;
+}
+.dream>div>span{
+	text-align: center;
+	display: block;
+	font-size: 45px;
+}
+.dream ul{
+	list-style: none;
+	margin-top: 92px;
+	height: 208px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.dream li{
+	height: 76px;
+	font-size: 25px;
+	display: block;
+	width: 32%;
+	text-align: center;
+}
+
+/*/DREAM*/
+
+/*FURNITURE IS IT*/
+
+.furniture{
+	background: url(../img/block5.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     background-position: center;
+    height: 1069px;
+}
+
+.furniture>div>div>div{
+	width: 117px;
+	height: 117px;
+	border-radius: 50%;
+	background: #303030;
+	float: left;
+	margin-right: 56px;
+}
+.furniture>div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 900px;
+}
+.furniture>div>div{
+	width: 86.6%;	
+}
+.furniture img{
+	padding: 20% 20%;
+}
+.furniture h2{
+	margin-top: 106px;
+	font-size: 45px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.furniture span{
+	font-size: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.furniture p{
+	margin-top: 35px;
+	font-size: 20px;
+    font-family: "Scada";
+}
+
+/*/FURNITURE IS IT*/
+
+/*IMPLEMENTED PROJECTS*/
+
+.implemented_projects{
+	margin-top:96px;
+}
+.implemented_projects h2{
+	text-align: center;
+	font-size: 45px;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 52px;
+}
+.implemented_projects ul{
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.implemented_projects li{
+	display: inline-block;
+}
+.implemented_projects a{
+	text-transform: uppercase;
+	text-decoration: none;
+	color:#080704 ;
+	font-size: 20px;
+	font-weight: bold;
+}
+.implemented{
+	height: 479px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	margin-top: 39px;
+	margin-bottom: 108px;
+}
+hr{
+	color: #898989;
+}
+.red_text:hover{
+	color:red;
+}
+
+/*/IMPLEMENTED PROJECTS*/
+
+/*OUR PARTNERS*/
+
+.our_partners{
+	margin-top: 84px;
+}
+.our_partners h2{
+	font-size: 45px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.partners1{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 107px;
+}
+.partners2{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 48px;
+}
+
+/*/OUR PARTNERS*/
+
+/*REVIEWS*/
+
+.reviews{
+	background: url(../img/block7.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     background-position: center;
+    height: 1170px;
+}
+.reviews h2{
+	font-size: 45px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top: 170px;
+	padding-bottom: 59px;
+}
+.reviews .wraper>div{
+	background-color: rgba(49,47,45,0.8);
+	height: 326px;
+	width: 40.6%;
+	padding: 25px 29px 41px 28px;
+	color:white;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.reviews .wraper>div img{
+	height: 131px;
+	vertical-align: middle;
+	margin-right: 9px;
+	float: left;
+	margin-bottom: 28px;
+
+}
+.reviews .wraper>div>div>p{
+	font-size: 25px;
+}
+.reviews .wraper>div{
+	margin: 35px;
+	border-radius: 10px;
+}
+.reviews .wraper>div>div:first-child p{
+	padding-top: 17px;
+}
+.reviews .wraper>div>div:last-child p{
+	font-size: 18px;
+}
+.reviews .wraper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/*/REVIEWS*/
+
+/*STEPS*/
+
+.steps{
+	height: 789px;
+	background: url(../img/line2.png);
+	 -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     background-position: center;
+     position: relative;
+     top: -176px;
+     z-index: -2;
+}
+.steps h2{
+	padding-top: 195px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 45px;
+	padding-bottom: 32px;
+}
+.row_step{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	padding-bottom: 73px;
+	position: relative;
+}
+.conteiner_step_img{
+	background: rgba(127,127,127,0.8);
+	width: 84px;
+	height: 84px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	margin-right: 13px;
+}
+.row_step p{
+	width: 120px;
+}
+.row_step div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.arrow_rewerse{
+	transform: rotate(180deg);
+}
+.arrow_right{
+	position: absolute;
+	top: 94px;
+    right: -18px;
+	transform: rotate(270deg);
+}
+.arrow_left{
+	position: absolute;
+	top: -71px;
+    right: 944px;
+}
+
+/*/STEPS*/
+
+/*FORM 2*/
+
+.second_form{
+	background: url(../img/block_form2.png);
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 718px;
+    top: -389px;
+}
+.second_form .wraper>div{
+	margin: 0 auto;
+	position:relative;
+	top:189px;
+}
+.absolute{
+	position:relative;
+}
+
+/*/FORM 2*/
+
+/*FOOTER*/
+
+footer{
+	height: 159px;
+	background: #000000;
+    margin-top: -389px;
+    margin-bottom: 174px;
+    color: white;
+    padding-top: 31px;
+}
+footer .wraper{
+	display: flex;
+	justify-content: space-between;
+}
+footer .wraper div{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+footer .wraper div:last-child{
+	width: 40%;
+	font-size: 25.06px;
+	font-weight: bold;
+}
+footer .wraper div:last-child .mail{
+	font-size: 19.98px;
+}
+footer .wraper div:first-child span{
+	font-size: 28.59px;
+}
+
+/*/FOOTER*/
